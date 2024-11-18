@@ -23,6 +23,8 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin
 Carry = AB + ACin + BCin
 
 ![image](https://github.com/naavaneetha/FULL_ADDER_SUBTRACTOR/assets/154305477/0f30ba51-5ffb-4198-845f-18e054f675e7)
+**Truth Table**
+![Screenshot (3)](https://github.com/user-attachments/assets/15eeb76c-df14-4b72-b763-2deb57cfaec3)
 
 **Figure -1 FULL ADDER**
 
@@ -37,22 +39,57 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![Screenshot (4)](https://github.com/user-attachments/assets/3c3ce696-7d99-44d0-ad7b-0fc665d089c9)
 
-**Procedure**
 
 Write the detailed procedure here
 
 **Program:**
+module unit22(sum,cout,a,b,cin);
+output sum;
+output cout;
+input a;
+input b;
+input cin;
+wire s1,c1,c2;
+xor (s1,a,b);
+and(c1,a,b);
+xor(sum,s1,cin);
+and(c2,s1,cin);
+or(cout,c2,c1);
+endmodule
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+module unit23 (df,bo,a,b,bin); 
+output df; 
+output bo; 
+input a; 
+input b; 
+input bin; 
+wire w1,w2,w3; 
+assign w1=a^b; 
+assign w2=(~a&b); 
+assign w3=(~w1&bin); 
+assign
+df=w1^bin; 
+assign bo=w2|w3; 
+endmodule
+
+
+
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by:Ajmal Ali.S RegisterNumber:24009653
 */
 
 **RTL Schematic**
+![Screenshot (5)](https://github.com/user-attachments/assets/ec0d85bc-79ab-402a-a577-3af1456a206a)
+![Screenshot (6)](https://github.com/user-attachments/assets/f72bbde9-18ae-4f32-b246-0c024a6a392f)
+
 
 **Output Timing Waveform**
+![WhatsApp Image 2024-11-18 at 2 24 05 PM](https://github.com/user-attachments/assets/32197666-5a0e-4311-8dbb-57049725381b)
+![WhatsApp Image 2024-11-18 at 2 24 27 PM](https://github.com/user-attachments/assets/c9089645-8e2e-4eac-988f-721f74253ca0)
+
 
 **Result:**
-
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
 
 
